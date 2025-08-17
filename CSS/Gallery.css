@@ -1,0 +1,47 @@
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #000;
+}
+.navbar-nav .nav-link {
+  transition: color 0.3s;
+}
+.navbar-nav .nav-link:hover {
+  color: #0d6efd !important;
+}
+.social-icons a {
+  transition: color 0.3s;
+}
+.social-icons a:hover {
+  color: #0d6efd !important;
+}
+
+/* Gallery */
+.gallery-item {
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Filter buttons */
+.filter-btn {
+  margin: 5px;
+}
+.filter-btn.active {
+  background-color: #0d6efd !important;
+  color: #fff !important;
+}

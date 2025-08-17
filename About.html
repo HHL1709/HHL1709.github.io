@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About</title>
+  <link href="Images/icon.png" rel="icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="C:\Users\HP\OneDrive\Desktop\WD-1\Assignment-2\Mini Project\CSS\About.css"> <!-- External CSS -->
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><i class="fa-solid fa-camera"></i> Harsh Studio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="About.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="Gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="Service.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+        </ul>
+        <div class="ms-3 social-icons">
+          <a href="#" class="text-light me-2"><i class="fab fa-github"></i></a>
+          <a href="#" class="text-light me-2"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="text-light me-2"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-light"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- About Content -->
+  <section class="about-section">
+    <img src="Images/me.jpg" alt="Harsh Lalka">
+    <h2>Harsh Lalka</h2>
+    <p>Hello! I’m Harsh, the photographer behind Harsh Studio. I love capturing real emotions, candid smiles, and the little details that make every moment unique. Whether it’s a wedding, a portrait, or a lifestyle shoot, my goal is simple – to create photos that feel natural, personal, and timeless.</p>
+  </section>
+
+  <!-- Small Gallery -->
+  <section class="container pb-5">
+    <div class="row g-3" id="aboutGallery">
+      <div class="col-6 col-md-3">
+        <div class="gallery-item text-center">
+          <img src="Images/1.jpg" alt="Landscape"
+               class="img-fluid"
+               onclick="showDetails(this,'Landscape photography captures the beauty and grandeur of natural and sometimes man-made outdoor spaces.')">
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="gallery-item text-center">
+          <img src="Images/2.jpg" alt="Sports"
+               class="img-fluid"
+               onclick="showDetails(this,'Sports photography captures the dynamic action and emotion of sporting events, encompassing both live-action shots and behind-the-scenes moments.')">
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="gallery-item text-center">
+          <img src="Images/3.jpg" alt="Wildlife"
+               class="img-fluid" 
+               onclick="showDetails(this,'Wildlife photography is a specialized genre of photography focused on capturing images of animals in their natural habitats, showcasing their behavior, interactions, and environment.')">
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="gallery-item text-center">
+          <img src="Images/4.jpg" alt="Architectural"
+               class="img-fluid"
+               onclick="showDetails(this,'Architectural photography is a specialized field of photography focused on capturing images of buildings and other structures, both inside and out, with the goal of showcasing their design, aesthetics, and details.')">
+        </div>
+      </div>
+    </div>
+
+    <!-- Details section -->
+    <div id="imageDetails" class="text-center mt-4" style="display:none;">
+      <img id="detailImage" src="" class="img-fluid rounded mb-3 preview-img" alt="">
+      <h4 id="detailTitle"></h4>
+      <p id="detailText"></p>
+      <button class="btn btn-danger mt-2" onclick="closeDetails()">Close</button>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function showDetails(img, text) {
+      document.getElementById("imageDetails").style.display = "block";
+      document.getElementById("detailImage").src = img.src.replace("/400/300", "/800/500"); // bigger version
+      document.getElementById("detailImage").alt = img.alt;
+      document.getElementById("detailTitle").innerText = img.alt;
+      document.getElementById("detailText").innerText = text;
+      // Scroll smoothly to details
+      document.getElementById("imageDetails").scrollIntoView({behavior: "smooth"});
+    }
+
+    function closeDetails() {
+      document.getElementById("imageDetails").style.display = "none";
+    }
+  </script>
+</body>
+</html>
